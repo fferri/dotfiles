@@ -10,4 +10,4 @@ export OPENNI2_REDIST=/usr/local/lib/ni2
 [ -x "$HOME/.vim/bin/cc_args.py" ] && export CXX="$HOME/.vim/bin/cc_args.py g++"
 [ -d "$HOME/Dev/Python/site-packages" ] && export PYTHONPATYH="$PYTHONPATYH:$HOME/Dev/Python/site-packages"
 command -v luarocks > /dev/null && eval $(luarocks path --bin)
-[ "$HOME/.profile.local" ] && source "$HOME/.profile.local"
+[ -f "$HOME/.profile.local" ] && source "$HOME/.profile.local"
