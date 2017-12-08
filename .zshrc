@@ -5,6 +5,8 @@
 export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="robbyrussell"
+[[ -f "$HOME/.oh-my-zsh/custom/themes/kardan-iterm2.zsh-theme" ]] && ZSH_THEME="$HOME/.oh-my-zsh/custom/themes/kardan-iterm2.zsh-theme"
 ZSH_THEME="kardan-iterm2"
 
 function get_host {
