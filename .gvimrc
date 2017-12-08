@@ -1,4 +1,8 @@
-set guifont=Meslo_LG_M_Regular_for_Powerline:h14,Monaco:h14,Inconsolata-gz:10
+if has('macunix')
+    set guifont=Meslo_LG_M_Regular_for_Powerline:h14
+else
+    set guifont=Monospace\ 11
+endif
 
 " show toolbar
 set guioptions+=T
