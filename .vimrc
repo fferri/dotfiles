@@ -12,8 +12,10 @@ Plugin 'VundleVim/Vundle.vim'
 "Plugin 'vim-airline/vim-airline'
 "Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'unkiwii/vim-nerdtree-sync'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " run :PluginInstall in vim, or vim +PluginInstall +qall from shell
 
@@ -77,6 +79,12 @@ let g:nerdtree_tabs_open_on_gui_startup=2
 " Open NERDTree on console vim startup. (default: 0)
 " (When set to 2, open only if directory was given as startup argument).
 let g:nerdtree_tabs_open_on_console_startup=2
+
+" after open a file, if NERDTree is open, it will show that file in NERDTree window
+let g:nerdtree_sync_cursorline = 1
+
+" configure NERDTree to always show the cursorline:
+let g:NERDTreeHighlightCursorline = 1
 
 let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/'
 
