@@ -1,4 +1,4 @@
-set guifont=Meslo_LG_M_Regular_for_Powerline:h14
+set guifont=Meslo_LG_M_Regular_for_Powerline:h14,Monaco:h14,Inconsolata-gz:10
 
 " show toolbar
 set guioptions+=T
