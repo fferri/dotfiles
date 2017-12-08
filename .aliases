@@ -1,5 +1,5 @@
-alias vi=vim
-alias gvim=mvim
+command -v vi > /dev/null || alias vi="vim"
+command -v gvim > /dev/null || alias gvim="mvim"
 
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
