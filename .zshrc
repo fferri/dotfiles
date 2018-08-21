@@ -34,8 +34,12 @@ source $ZSH/oh-my-zsh.sh
 [ -f "$HOME/.profile" ] && . "$HOME/.profile"
 [ -f "$HOME/.aliases" ] && . "$HOME/.aliases"
 
-zstyle ':completion:*' completer _approximate
+#zstyle ':completion:*' completer _approximate
+zstyle ':completion:*' completer _complete _approximate
+
+unsetopt share_history
 
 [ -f "$HOME/.zshrc.local" ] && . "$HOME/.zshrc.local"
 
 echo -e '\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n'
+
