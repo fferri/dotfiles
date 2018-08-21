@@ -84,4 +84,8 @@ fi;
 
 #alias diff='diff --exclude=".git" --exclude=".svn" --exclude=".hg"'
 
-[[ -d "${QT5_DIR}" ]] && alias qmake="${QT5_DIR}/bin/qmake"
+if command -v qmake > /dev/null; then
+    :
+elif [[ -d "${QT5_DIR}" ]]; then
+    alias qmake="${QT5_DIR}/bin/qmake"
+fi
