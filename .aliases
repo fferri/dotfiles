@@ -89,3 +89,6 @@ if command -v qmake > /dev/null; then
 elif [[ -d "${QT5_DIR}" ]]; then
     alias qmake="${QT5_DIR}/bin/qmake"
 fi
+
+# lldb bug https://stackoverflow.com/questions/47658596/strange-mixing-of-system-homebrew-python-with-lldb
+alias lldb='PATH=/usr/bin lldb'
