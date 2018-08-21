@@ -12,7 +12,14 @@ fi
 export CMAKE_PREFIX_PATH="${QT5_DIR}/lib/cmake"
 export OPENNI2_INCLUDE=/usr/local/include/ni2
 export OPENNI2_REDIST=/usr/local/lib/ni2
-[ -x "$HOME/.vim/bin/cc_args.py" ] && export CXX="$HOME/.vim/bin/cc_args.py g++"
-[ -d "$HOME/Dev/Python/site-packages" ] && export PYTHONPATYH="$PYTHONPATYH:$HOME/Dev/Python/site-packages"
-command -v luarocks > /dev/null && eval $(luarocks path --bin)
-[ -f "$HOME/.profile.local" ] && source "$HOME/.profile.local"
+if [ -d "$HOME/Dev/Python/site-packages" ]; then
+    export PYTHONPATYH="$PYTHONPATYH:$HOME/Dev/Python/site-packages"
+fi
+if command -v luarocks > /dev/null; then
+    eval $(luarocks path --bin)
+fi
+if [ -f "$HOME/.profile.local" ]; then
+    source "$HOME/.profile.local"
+fi
+export MAKEFLAGS="-j8"
+export B0_CONSOLE_LOGLEVEL=trace
