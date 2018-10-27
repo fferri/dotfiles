@@ -1,5 +1,5 @@
 if has('macunix')
-    set guifont=Meslo_LG_M_Regular_for_Powerline:h14
+    set guifont=HackNerdFontComplete-Regular:h14
 else
     set guifont=Monospace\ 11
 endif
