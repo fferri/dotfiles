@@ -4,10 +4,21 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="powerlevel9k/powerlevel9k"
 ZSH_THEME="robbyrussell"
 ZSH_THEME="kardan"
 [[ -f "$HOME/.oh-my-zsh/custom/themes/kardan-iterm2.zsh-theme" ]] && ZSH_THEME="kardan-iterm2"
+ZSH_THEME="powerlevel9k/powerlevel9k"
+
+POWERLEVEL9K_MODE='nerdfont-complete'
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status context background_jobs dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+POWERLEVEL9K_DISABLE_RPROMPT=true
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=" \e[1D"
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="\e[00;44m \e[00;34m\e[0m "
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="$ "
+POWERLEVEL9K_BACKGROUND_JOBS_VERBOSE_ALWAYS=true
+POWERLEVEL9K_HIDE_BRANCH_ICON=false
 
 function get_host {
     echo '@'$HOST
@@ -20,13 +31,6 @@ HIST_STAMPS="dd/mm/yyyy"
 plugins=(
     docker
 )
-
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs background_jobs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
-POWERLEVEL9K_DISABLE_RPROMPT=true
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=" \e[1D"
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="❯ "
 
 source $ZSH/oh-my-zsh.sh
 
