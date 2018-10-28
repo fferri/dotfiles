@@ -27,6 +27,7 @@ Plug 'mhinz/vim-signify'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'farmergreg/vim-lastplace'
 Plug 'chrisbra/NrrwRgn'
+Plug 'scrooloose/nerdcommenter'
 
 " completion:
 if has('nvim')
