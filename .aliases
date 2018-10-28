@@ -11,6 +11,8 @@ alias -- -="cd -"
 
 command -v colorls > /dev/null && alias ls=colorls
 
+alias l=ls
+
 # List all files colorized in long format
 alias ll="ls -l"
 
