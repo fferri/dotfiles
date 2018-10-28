@@ -10,7 +10,7 @@ ZSH_THEME="kardan"
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
 POWERLEVEL9K_MODE='nerdfont-complete'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status context background_jobs dir vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status context background_jobs dir custom_vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 POWERLEVEL9K_DISABLE_RPROMPT=true
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
@@ -19,6 +19,15 @@ POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="\e[00;44m \e[00;34m\e[0m "
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="$ "
 POWERLEVEL9K_BACKGROUND_JOBS_VERBOSE_ALWAYS=true
 POWERLEVEL9K_HIDE_BRANCH_ICON=false
+POWERLEVEL9K_CUSTOM_VCS="custom_vcs"
+POWERLEVEL9K_CUSTOM_VCS_BACKGROUND="green"
+POWERLEVEL9K_CUSTOM_VCS_FOREGROUND="black"
+
+function custom_vcs {
+    if [ -d .git ]; then
+        echo ' '$(git rev-parse --abbrev-ref HEAD)
+    fi
+}
 
 function get_host {
     echo '@'$HOST
