@@ -128,7 +128,7 @@ if has('clipboard') && !has('gui_running')
   inoremap <C-v> <C-r><C-o>+
 endif
 
-let g:NERDTreeWinPos = "right"
+let g:NERDTreeWinPos = "left"
 let NERDTreeShowHidden=0
 let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 let g:NERDTreeWinSize=35
