@@ -1,8 +1,9 @@
 export PATH=$HOME/.bin:/usr/local/bin:$PATH
+export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="robbyrussell"
 ZSH_THEME="kardan"
-[[ -f "$HOME/.oh-my-zsh/custom/themes/kardan-iterm2.zsh-theme" ]] && ZSH_THEME="kardan-iterm2"
+[[ -f "$ZSH/custom/themes/kardan-iterm2.zsh-theme" ]] && ZSH_THEME="kardan-iterm2"
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
 POWERLEVEL9K_MODE='nerdfont-complete' # http://nerdfonts.com/#cheat-sheet
@@ -37,7 +38,7 @@ HIST_STAMPS="dd/mm/yyyy"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 plugins=()
 
-source $HOME/.oh-my-zsh/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh
 
 [ -f "$HOME/.iterm2_shell_integration.zsh" ] && . "$HOME/.iterm2_shell_integration.zsh"
 [ -f "$HOME/.profile" ] && . "$HOME/.profile"
