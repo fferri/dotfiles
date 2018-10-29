@@ -3,6 +3,7 @@ filetype off
 
 let g:ale_completion_enabled = 1
 let g:nrrw_rgn_nomap_nr = 1
+let g:better_whitespace_filetypes_blacklist = ['leaderGuide']
 
 call plug#begin('~/.vim/plugged')
 
