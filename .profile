@@ -24,4 +24,3 @@ if [ -f "$HOME/.profile.local" ]; then
     source "$HOME/.profile.local"
 fi
 export MAKEFLAGS="-j8"
-export B0_CONSOLE_LOGLEVEL=trace
