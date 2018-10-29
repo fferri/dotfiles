@@ -51,6 +51,8 @@ filetype on
 filetype plugin on
 filetype indent on
 
+set encoding=UTF-8
+
 let mapleader=","
 nmap ; :
 
@@ -110,7 +112,7 @@ set background=dark
 if has('gui_running')
   let g:solarized_termcolors=256
 else
-  "let g:solarized_termcolors=16
+  let g:solarized_termcolors=16
 endif
 let g:solarized_termtrans=1
 colorscheme solarized
