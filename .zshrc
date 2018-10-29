@@ -7,7 +7,13 @@ ZSH_THEME="kardan"
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
 POWERLEVEL9K_MODE='nerdfont-complete' # http://nerdfonts.com/#cheat-sheet
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_context custom_background_jobs dir custom_vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(vi_mode custom_context custom_background_jobs dir custom_vcs)
+POWERLEVEL9K_VI_INSERT_MODE_STRING=''
+POWERLEVEL9K_VI_COMMAND_MODE_STRING="\ue7c5"
+POWERLEVEL9K_VI_MODE_INSERT_BACKGROUND='005'
+POWERLEVEL9K_VI_MODE_INSERT_FOREGROUND='236'
+POWERLEVEL9K_VI_MODE_NORMAL_BACKGROUND='green'
+POWERLEVEL9K_VI_MODE_NORMAL_FOREGROUND='white'
 POWERLEVEL9K_DIR_PATH_SEPARATOR=" \ue0b1 "
 POWERLEVEL9K_DIR_OMIT_FIRST_CHARACTER=false
 POWERLEVEL9K_DIR_SHOW_WRITABLE=true
@@ -66,4 +72,7 @@ clear2() { echo -e '\033[2J\033['$LINES';0H' }
 clear2w() { clear2; zle redisplay }
 zle -N clear2w
 bindkey '^L' clear2w
+bindkey -M vicmd '^L' clear2w
+bindkey -M viins '^L' clear2w
+bindkey -v #viins
 clear2
