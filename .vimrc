@@ -1,6 +1,9 @@
 set nocompatible
 filetype off
 
+let g:ale_completion_enabled = 1
+let g:nrrw_rgn_nomap_nr = 1
+
 call plug#begin('~/.vim/plugged')
 
 " user-interface:
@@ -119,6 +122,7 @@ let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 let g:NERDTreeWinSize=35
 map <leader>nt :NERDTreeToggle<cr>
 map <leader>nf :NERDTreeFind<cr>
+map <leader>nr :NERDTreeRefreshRoot<cr>
 map <C-n> :NERDTreeToggle<cr>
 let loaded_netrwPlugin = 1 " to disable netrw
 let g:nerdtree_tabs_open_on_gui_startup=2 " Open NERDTree on startup only if directory was given as startup argument
@@ -139,8 +143,11 @@ map <leader>gc :Gcommit<cr>
 map <leader>gp :Gpush<cr>
 map <leader>gu :Gpull<cr>
 
+map <leader>NR :NarrowRegion<cr>
+
 let g:lmap = {}
 let g:lmap.n = { 'name' : 'NERDtree' }
+let g:lmap.N = { 'name' : 'NarrowRegion' }
 let g:lmap.c = { 'name' : 'NERDcommenter' }
 let g:lmap.t = { 'name' : 'TagBar' }
 let g:lmap.g = { 'name' : 'Git' }
