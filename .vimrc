@@ -6,11 +6,13 @@ call plug#begin('~/.vim/plugged')
 " user-interface:
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
-Plug 'jistr/vim-nerdtree-tabs', { 'on': 'NERDTreeToggle' }
-Plug 'unkiwii/vim-nerdtree-sync', { 'on': 'NERDTreeToggle' }
 Plug 'altercation/vim-colors-solarized'
+
+" nerdtree & friends:
+Plug 'scrooloose/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'unkiwii/vim-nerdtree-sync'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
 
 Plug 'ntpeters/vim-better-whitespace'
