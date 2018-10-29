@@ -33,6 +33,8 @@ Plug 'scrooloose/nerdcommenter'
 
 Plug 'w0rp/ale'
 
+Plug 'vim-scripts/indentpython.vim'
+
 " run :PluginInstall in vim, or vim +PluginInstall +qall from shell
 " All of your Plugins must be added before the following line
 call plug#end()
