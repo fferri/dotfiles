@@ -31,15 +31,6 @@ Plug 'farmergreg/vim-lastplace'
 Plug 'chrisbra/NrrwRgn'
 Plug 'scrooloose/nerdcommenter'
 
-" completion:
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-let g:deoplete#enable_at_startup = 1
 Plug 'w0rp/ale'
 
 " run :PluginInstall in vim, or vim +PluginInstall +qall from shell
