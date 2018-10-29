@@ -135,6 +135,14 @@ let g:nerdtree_tabs_open_on_console_startup=2
 let g:nerdtree_sync_cursorline = 1 " after open a file, if NERDTree is open, it will show that file in NERDTree window
 let g:NERDTreeHighlightCursorline = 1 " configure NERDTree to always show the cursorline:
 
+let b:ale_linters = ['flake8']
+let b:ale_fixers = [
+\   'remove_trailing_lines',
+\   'isort',
+\   'ale#fixers#generic_python#BreakUpLongLines',
+\   'yapf',
+\]
+
 let g:DevIconsEnableFoldersOpenClose = 1
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:WebDevIconsNerdTreeBeforeGlyphPadding = ''
