@@ -127,13 +127,20 @@ let g:NERDTreeWinSize=35
 map <leader>nt :NERDTreeToggle<cr>
 map <leader>nf :NERDTreeFind<cr>
 map <C-n> :NERDTreeToggle<cr>
+let loaded_netrwPlugin = 1 " to disable netrw
 let g:nerdtree_tabs_open_on_gui_startup=2 " Open NERDTree on startup only if directory was given as startup argument
 let g:nerdtree_tabs_open_on_console_startup=2
 let g:nerdtree_sync_cursorline = 1 " after open a file, if NERDTree is open, it will show that file in NERDTree window
 let g:NERDTreeHighlightCursorline = 1 " configure NERDTree to always show the cursorline:
 
-map <leader>t :TagbarToggle<cr>
+let g:DevIconsEnableFoldersOpenClose = 1
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:WebDevIconsNerdTreeBeforeGlyphPadding = ''
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
 
+map <leader>tt :TagbarToggle<cr>
+
+map <leader>gd :Gdiff<cr>
 map <leader>gs :Gstatus<cr>
 map <leader>gc :Gcommit<cr>
 map <leader>gp :Gpush<cr>
