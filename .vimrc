@@ -95,18 +95,6 @@ set modelines=1
 set nobackup
 set noswapfile
 
-" Always show the status line
-set laststatus=2
-" Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
-
-function! HasPaste()
-    if &paste
-        return '(paste)  '
-    endif
-    return ''
-endfunction
-
 set t_Co=256
 set background=dark
 if has('gui_running')
@@ -164,12 +152,6 @@ let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/
 let g:airline_theme='angr'
 let g:airline_solarized_bg='dark'
 let g:airline_powerline_fonts=1
-
-" jump to last position when reopening a file
-"if has("autocmd")
-"    au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-"endif
-" not needed with Plug 'farmergreg/vim-lastplace'
 
 " iterm: change cursor shape in insert mode
 let iterm_session_id=$ITERM_SESSION_ID
