@@ -47,9 +47,18 @@ source $ZSH/oh-my-zsh.sh
 [ -f "$HOME/.profile" ] && . "$HOME/.profile"
 [ -f "$HOME/.aliases" ] && . "$HOME/.aliases"
 
-zstyle ':completion:*' completer _complete _approximate
+setopt append_history           # Dont overwrite history
+setopt extended_history         # Also record time and duration of commands.
+unsetopt share_history          # Dont share history between multiple shells
+setopt hist_expire_dups_first   # Clear duplicates when trimming internal hist.
+setopt hist_find_no_dups        # Dont display duplicates during searches.
+setopt hist_ignore_dups         # Ignore consecutive duplicates.
+setopt hist_ignore_all_dups     # Remember only one unique copy of the command.
+setopt hist_reduce_blanks       # Remove superfluous blanks.
+setopt hist_save_no_dups        # Omit older commands in favor of newer ones.
+setopt hist_ignore_space        # Ignore commands that start with space.
 
-unsetopt share_history
+zstyle ':completion:*' completer _complete _approximate
 
 [ -f "$HOME/.zshrc.local" ] && . "$HOME/.zshrc.local"
 
