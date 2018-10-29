@@ -141,6 +141,7 @@ map <leader>gu :Gpull<cr>
 
 let g:lmap = {}
 let g:lmap.n = { 'name' : 'NERDtree' }
+let g:lmap.c = { 'name' : 'NERDcommenter' }
 let g:lmap.t = { 'name' : 'TagBar' }
 let g:lmap.g = { 'name' : 'Git' }
 call leaderGuide#register_prefix_descriptions(",", "g:lmap")
