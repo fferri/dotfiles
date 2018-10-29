@@ -9,7 +9,7 @@ ZSH_THEME="kardan"
 [[ -f "$HOME/.oh-my-zsh/custom/themes/kardan-iterm2.zsh-theme" ]] && ZSH_THEME="kardan-iterm2"
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
-POWERLEVEL9K_MODE='nerdfont-complete'
+POWERLEVEL9K_MODE='nerdfont-complete' # http://nerdfonts.com/#cheat-sheet
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_context custom_background_jobs dir custom_vcs)
 POWERLEVEL9K_DIR_PATH_SEPARATOR=" \ue0b1 "
 POWERLEVEL9K_DIR_OMIT_FIRST_CHARACTER=false
