@@ -10,36 +10,36 @@ ZSH_THEME="kardan"
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
 POWERLEVEL9K_MODE='nerdfont-complete'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status context background_jobs dir custom_vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_context custom_background_jobs dir custom_vcs)
+POWERLEVEL9K_DIR_PATH_SEPARATOR=" \ue0b1 "
+POWERLEVEL9K_DIR_OMIT_FIRST_CHARACTER=false
+POWERLEVEL9K_DIR_SHOW_WRITABLE=true
+POWERLEVEL9K_DIR_PATH_HIGHLIGHT_FOREGROUND="black"
+POWERLEVEL9K_DIR_PATH_HIGHLIGHT_BOLD=false
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 POWERLEVEL9K_DISABLE_RPROMPT=true
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=" \e[1D"
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="\e[00;44m \e[00;34m\e[0m "
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="$ "
-POWERLEVEL9K_BACKGROUND_JOBS_VERBOSE_ALWAYS=true
-POWERLEVEL9K_HIDE_BRANCH_ICON=false
-POWERLEVEL9K_CUSTOM_VCS="custom_vcs"
-POWERLEVEL9K_CUSTOM_VCS_BACKGROUND="green"
-POWERLEVEL9K_CUSTOM_VCS_FOREGROUND="black"
-
-function custom_vcs {
-    if [ -d .git ]; then
-        echo ' '$(git rev-parse --abbrev-ref HEAD)
-    fi
-}
-
-function get_host {
-    echo '@'$HOST
-}
+POWERLEVEL9K_CUSTOM_CONTEXT='echo "$USER@$SHORT_HOST"'
+POWERLEVEL9K_CUSTOM_CONTEXT_BACKGROUND="black"
+POWERLEVEL9K_CUSTOM_CONTEXT_FOREGROUND="blue"
+POWERLEVEL9K_CUSTOM_BACKGROUND_JOBS='j=$(echo $(jobs|wc -l)); if [ $j -gt 0 ]; then echo "\uf110 $njobs"; fi'
+POWERLEVEL9K_CUSTOM_BACKGROUND_JOBS_BACKGROUND="white"
+POWERLEVEL9K_CUSTOM_BACKGROUND_JOBS_FOREGROUND="black"
+POWERLEVEL9K_DIR_BACKGROUND="#6d8bb3"
+POWERLEVEL9K_DIR_FOREGROUND="black"
+POWERLEVEL9K_CUSTOM_VCS='if [ -d .git ]; then echo "\uf126 $(git rev-parse --abbrev-ref HEAD)"; fi'
+POWERLEVEL9K_CUSTOM_VCS_BACKGROUND="gray"
+POWERLEVEL9K_CUSTOM_VCS_FOREGROUND="green"
 
 DISABLE_AUTO_UPDATE="true"
 HIST_STAMPS="dd/mm/yyyy"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(
-    docker
-)
+plugins=()
 
 source $ZSH/oh-my-zsh.sh
 
@@ -47,7 +47,6 @@ source $ZSH/oh-my-zsh.sh
 [ -f "$HOME/.profile" ] && . "$HOME/.profile"
 [ -f "$HOME/.aliases" ] && . "$HOME/.aliases"
 
-#zstyle ':completion:*' completer _approximate
 zstyle ':completion:*' completer _complete _approximate
 
 unsetopt share_history
@@ -56,15 +55,8 @@ unsetopt share_history
 
 type thefuck > /dev/null && eval $(thefuck --alias 2> /dev/null)
 
-clear2() {
-    echo -e '\033[2J\033['$LINES';0H'
-}
-clear2w() {
-    clear2
-    zle redisplay
-}
-
+clear2() { echo -e '\033[2J\033['$LINES';0H' }
+clear2w() { clear2; zle redisplay }
 zle -N clear2w
 bindkey '^L' clear2w
-
 clear2
