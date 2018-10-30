@@ -75,4 +75,11 @@ bindkey '^L' clear2w
 bindkey -M vicmd '^L' clear2w
 bindkey -M viins '^L' clear2w
 bindkey -v #viins
+bindkey '[A' up-line-or-search
+bindkey 'OA' up-line-or-search
+bindkey '[B' down-line-or-search
+bindkey 'OB' down-line-or-search
+bindkey 'b' backward-word
+bindkey 'f' forward-word
+bindkey '' backward-delete-word
 clear2
