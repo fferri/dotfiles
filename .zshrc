@@ -82,4 +82,6 @@ bindkey 'OB' down-line-or-search
 bindkey 'b' backward-word
 bindkey 'f' forward-word
 bindkey '' backward-delete-word
+bindkey '' beginning-of-line
+bindkey '' end-of-line
 clear2
