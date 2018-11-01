@@ -42,7 +42,8 @@ plugins=()
 
 source $ZSH/oh-my-zsh.sh
 
-[ -f /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh ] && . /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+[ -f $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && . $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[ -f $HOME/.zsh-autosuggestions/zsh-autosuggestions.zsh ] && . $HOME/.zsh-autosuggestions/zsh-autosuggestions.zsh
 [ -f "$HOME/.iterm2_shell_integration.zsh" ] && . "$HOME/.iterm2_shell_integration.zsh"
 [ -f "$HOME/.profile" ] && . "$HOME/.profile"
 [ -f "$HOME/.aliases" ] && . "$HOME/.aliases"
