@@ -38,7 +38,6 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'w0rp/ale'
 Plug 'vim-syntastic/syntastic' " check syntax on each file save
 Plug 'nvie/vim-flake8' " also add PEP8 checking
-
 Plug 'vim-scripts/indentpython.vim'
 
 " run :PluginInstall in vim, or vim +PluginInstall +qall from shell
