@@ -1,6 +1,9 @@
 export PATH=$HOME/.bin:/usr/local/bin:$PATH
 export ZSH=$HOME/.oh-my-zsh
 
+clear2() { echo -e '\033[2J\033['$LINES';0H' }
+clear2
+
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
 POWERLEVEL9K_MODE='nerdfont-complete' # http://nerdfonts.com/#cheat-sheet
@@ -65,7 +68,6 @@ zstyle ':completion:*' completer _complete _approximate
 
 type thefuck > /dev/null && eval $(thefuck --alias 2> /dev/null)
 
-clear2() { echo -e '\033[2J\033['$LINES';0H' }
 clear2w() { clear2; zle redisplay }
 zle -N clear2w
 bindkey '^L' clear2w
@@ -84,4 +86,3 @@ bindkey '^[f' forward-word
 bindkey '^[^?' backward-delete-word
 bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
-clear2
