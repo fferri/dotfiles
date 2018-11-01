@@ -77,8 +77,11 @@ bindkey -M viins '^L' clear2w
 bindkey -v #viins
 bindkey '[A' up-line-or-search
 bindkey '[B' down-line-or-search
-bindkey 'OA' history-beginning-search-backward
-bindkey 'OB' history-beginning-search-forward
+autoload -U history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "OA" history-beginning-search-backward-end
+bindkey "OB" history-beginning-search-forward-end
 bindkey 'b' backward-word
 bindkey 'f' forward-word
 bindkey '' backward-delete-word
