@@ -92,8 +92,11 @@ set scrolloff=5 " keep at least 5 lines above/below
 
 set modelines=1
 
-set nobackup
-set noswapfile
+set nobackup " don't write backup files
+set noswapfile " don't use swap files
+set autoread " auto-reload a file as soon as it changes on disk
+au CursorHold * checktime " to make the previous work
+set updatetime=500
 
 set t_Co=256
 set background=dark
