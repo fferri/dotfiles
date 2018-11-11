@@ -15,7 +15,7 @@ export CMAKE_PREFIX_PATH="${QT5_DIR}/lib/cmake"
 export OPENNI2_INCLUDE=/usr/local/include/ni2
 export OPENNI2_REDIST=/usr/local/lib/ni2
 if [ -d "$HOME/Dev/Python/site-packages" ]; then
-    export PYTHONPATYH="$PYTHONPATYH:$HOME/Dev/Python/site-packages"
+    export PYTHONPATH="$PYTHONPATH:$HOME/Dev/Python/site-packages"
 fi
 if command -v luarocks > /dev/null; then
     eval $(luarocks path --bin)
