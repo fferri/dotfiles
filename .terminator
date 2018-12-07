@@ -1,0 +1,85 @@
+[global_config]
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  handle_size = 2
+  title_font = Hack Nerd Font 12
+  title_transmit_bg_color = "#ffcd9e"
+  title_transmit_fg_color = "#000000"
+  title_use_system_font = False
+  window_state = maximise
+[keybindings]
+  edit_window_title = None
+  full_screen = <Super>Return
+  go_down = <Alt><Super>Down
+  go_left = <Alt><Super>Left
+  go_next = None
+  go_prev = None
+  go_right = <Alt><Super>Right
+  go_up = <Alt><Super>Up
+  group_all = None
+  group_tab = None
+  help = None
+  hide_window = None
+  insert_number = None
+  insert_padded = None
+  layout_launcher = None
+  move_tab_left = None
+  move_tab_right = None
+  new_tab = <Super>t
+  new_terminator = None
+  new_window = <Super>n
+  next_tab = <Super>Right
+  page_down = <Primary>Page_Down
+  page_down_half = <Primary><Alt>Page_Down
+  page_up = <Primary>Page_Up
+  page_up_half = <Primary><Alt>Page_Up
+  paste = <Primary>v
+  prev_tab = <Super>Left
+  reset = None
+  reset_clear = None
+  resize_down = None
+  resize_left = None
+  resize_right = None
+  resize_up = None
+  rotate_ccw = None
+  rotate_cw = None
+  scaled_zoom = None
+  search = None
+  split_horiz = <Shift><Super>d
+  split_vert = <Super>d
+  switch_to_tab_1 = <Super>1
+  switch_to_tab_10 = None
+  switch_to_tab_2 = <Super>2
+  switch_to_tab_3 = <Super>3
+  switch_to_tab_4 = <Super>4
+  switch_to_tab_5 = <Super>5
+  switch_to_tab_6 = <Super>6
+  switch_to_tab_7 = <Super>7
+  switch_to_tab_8 = <Super>8
+  switch_to_tab_9 = <Super>9
+  toggle_scrollbar = None
+  toggle_zoom = <Primary><Super>Up
+  ungroup_all = None
+  ungroup_tab = None
+  zoom_in = <Super>equal
+  zoom_normal = <Super>0
+  zoom_out = <Super>minus
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_image = None
+    copy_on_selection = True
+    cursor_color = "#ff0060"
+    font = Hack Nerd Font 12
+    palette = "#000000:#cc0000:#4e9a06:#c4a000:#3465a4:#75507b:#06989a:#d3d7cf:#555753:#ef2929:#8ae234:#fce94f:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
+    scroll_on_output = False
+    scrollback_infinite = True
+    use_system_font = False
+    visible_bell = True
