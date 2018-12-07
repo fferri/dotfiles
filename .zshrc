@@ -43,6 +43,10 @@ DISABLE_AUTO_UPDATE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 plugins=()
 
+if [ `uname` = Linux -a $TERM = xterm ]; then
+    export TERM="xterm-256color"
+fi
+
 source $ZSH/oh-my-zsh.sh
 
 [ -f $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && . $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
