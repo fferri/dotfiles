@@ -41,7 +41,7 @@ POWERLEVEL9K_CUSTOM_VCS_FOREGROUND="green"
 DISABLE_AUTO_UPDATE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=()
+plugins=(zsh-iterm-touchbar)
 
 if [ `uname` = Linux -a $TERM = xterm ]; then
     export TERM="xterm-256color"
@@ -53,7 +53,6 @@ source $ZSH/oh-my-zsh.sh
 [ -f $HOME/.zsh-autosuggestions/zsh-autosuggestions.zsh ] && . $HOME/.zsh-autosuggestions/zsh-autosuggestions.zsh
 [ -f "$HOME/.iterm2_shell_integration.zsh" ] && . "$HOME/.iterm2_shell_integration.zsh"
 [ -f "$HOME/.profile" ] && . "$HOME/.profile"
-[ -f "$HOME/.aliases" ] && . "$HOME/.aliases"
 
 setopt append_history           # Dont overwrite history
 setopt extended_history         # Also record time and duration of commands.
@@ -90,3 +89,12 @@ bindkey '^[f' forward-word
 bindkey '^[^?' backward-delete-word
 bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
+
+zsh_update_stuff() {
+    (cd $ZSH && git pull)
+    (cd $ZSH/custom/themes/powerlevel9k && git pull)
+    (cd $HOME/.zsh-syntax-highlighting && git pull)
+    (cd $HOME/.zsh-autosuggestions && git pull)
+}
+
+[ -f "$HOME/.aliases" ] && . "$HOME/.aliases"
