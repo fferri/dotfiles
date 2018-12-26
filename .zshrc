@@ -34,7 +34,7 @@ POWERLEVEL9K_CUSTOM_BACKGROUND_JOBS_BACKGROUND="white"
 POWERLEVEL9K_CUSTOM_BACKGROUND_JOBS_FOREGROUND="black"
 POWERLEVEL9K_DIR_BACKGROUND="#6d8bb3"
 POWERLEVEL9K_DIR_FOREGROUND="black"
-POWERLEVEL9K_CUSTOM_VCS='if [ -d .git ]; then echo "\uf126 $(git rev-parse --abbrev-ref HEAD)"; fi'
+POWERLEVEL9K_CUSTOM_VCS='if [ -d .git ]; then echo "\uf126 $(git symbolic-ref --short HEAD 2>/dev/null || git rev-parse --short=6 HEAD)"; fi'
 POWERLEVEL9K_CUSTOM_VCS_BACKGROUND="gray"
 POWERLEVEL9K_CUSTOM_VCS_FOREGROUND="green"
 
