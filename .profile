@@ -8,8 +8,6 @@ if [ -x "/usr/libexec/java_home" ]; then
 fi
 if [ -d "/usr/local/opt/qt" ]; then
     export QT5_DIR="/usr/local/opt/qt"
-elif [ -d "$HOME/Dev/Qt/5.9.2/clang_64" ]; then
-    export QT5_DIR="$HOME/Dev/Qt/5.9.2/clang_64"
 fi
 export CMAKE_PREFIX_PATH="${QT5_DIR}/lib/cmake"
 export OPENNI2_INCLUDE=/usr/local/include/ni2
