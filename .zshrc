@@ -1,4 +1,4 @@
-export PATH=$HOME/.bin:/usr/local/bin:$PATH
+export PATH=$HOME/.bin:/usr/local/sbin:/usr/local/bin:$PATH
 export ZSH=$HOME/.oh-my-zsh
 
 clear2() { echo -e '\033[2J\033['$LINES';0H' }
