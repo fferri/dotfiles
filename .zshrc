@@ -41,7 +41,7 @@ POWERLEVEL9K_CUSTOM_VCS_FOREGROUND="green"
 DISABLE_AUTO_UPDATE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(zsh-iterm-touchbar)
+#plugins=(zsh-iterm-touchbar)
 
 if [ `uname` = Linux -a $TERM = xterm ]; then
     export TERM="xterm-256color"
