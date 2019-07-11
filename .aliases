@@ -97,6 +97,8 @@ fi
 # lldb bug https://stackoverflow.com/questions/47658596/strange-mixing-of-system-homebrew-python-with-lldb
 alias lldb='PATH=/usr/bin lldb'
 
+alias youtube-mp3='youtube-dl --extract-audio --audio-format mp3'
+
 alias ,gd='git diff'
 alias ,gds='git diff --staged'
 alias ,gs='git status'
