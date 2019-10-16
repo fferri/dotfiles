@@ -8,8 +8,8 @@ if [ -x "/usr/libexec/java_home" ]; then
 fi
 if [ -d "/usr/local/opt/qt" ]; then
     export QT5_DIR="/usr/local/opt/qt"
+    export CMAKE_PREFIX_PATH="${QT5_DIR}/lib/cmake"
 fi
-export CMAKE_PREFIX_PATH="${QT5_DIR}/lib/cmake"
 export OPENNI2_INCLUDE=/usr/local/include/ni2
 export OPENNI2_REDIST=/usr/local/lib/ni2
 if [ -d "$HOME/Dev/Python/site-packages" ]; then
