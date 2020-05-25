@@ -1,42 +1,19 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 export PATH=$HOME/.bin:/usr/local/sbin:/usr/local/bin:$PATH
 export ZSH=$HOME/.oh-my-zsh
 
 clear2() { echo -e '\033[2J\033['$LINES';0H' }
 clear2
 
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 POWERLEVEL9K_MODE='nerdfont-complete' # http://nerdfonts.com/#cheat-sheet
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(vi_mode custom_context custom_background_jobs dir custom_vcs)
-POWERLEVEL9K_VI_INSERT_MODE_STRING=''
-POWERLEVEL9K_VI_COMMAND_MODE_STRING="\ue7c5"
-POWERLEVEL9K_VI_MODE_INSERT_BACKGROUND='005'
-POWERLEVEL9K_VI_MODE_INSERT_FOREGROUND='236'
-POWERLEVEL9K_VI_MODE_NORMAL_BACKGROUND='022'
-POWERLEVEL9K_VI_MODE_NORMAL_FOREGROUND='white'
-POWERLEVEL9K_DIR_PATH_SEPARATOR=" \ue0b1 "
-POWERLEVEL9K_DIR_OMIT_FIRST_CHARACTER=false
-POWERLEVEL9K_DIR_SHOW_WRITABLE=true
-POWERLEVEL9K_DIR_PATH_HIGHLIGHT_FOREGROUND="black"
-POWERLEVEL9K_DIR_PATH_HIGHLIGHT_BOLD=false
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
-POWERLEVEL9K_DISABLE_RPROMPT=true
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
-POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=" \e[1D"
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="\e[00;44m \e[00;34m\e[0m "
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="$ "
-POWERLEVEL9K_CUSTOM_CONTEXT='echo "$USER@$SHORT_HOST"'
-POWERLEVEL9K_CUSTOM_CONTEXT_BACKGROUND="black"
-POWERLEVEL9K_CUSTOM_CONTEXT_FOREGROUND="blue"
-POWERLEVEL9K_CUSTOM_BACKGROUND_JOBS='j=$(echo $(jobs|wc -l)); if [ $j -gt 0 ]; then echo "\uf110 $njobs"; fi'
-POWERLEVEL9K_CUSTOM_BACKGROUND_JOBS_BACKGROUND="white"
-POWERLEVEL9K_CUSTOM_BACKGROUND_JOBS_FOREGROUND="black"
-POWERLEVEL9K_DIR_BACKGROUND="#6d8bb3"
-POWERLEVEL9K_DIR_FOREGROUND="black"
-POWERLEVEL9K_CUSTOM_VCS='if [ -d .git ]; then echo "\uf126 $(git symbolic-ref --short HEAD 2>/dev/null || git rev-parse --short=6 HEAD)"; fi'
-POWERLEVEL9K_CUSTOM_VCS_BACKGROUND="gray"
-POWERLEVEL9K_CUSTOM_VCS_FOREGROUND="green"
 
 DISABLE_AUTO_UPDATE="true"
 
@@ -92,9 +69,12 @@ bindkey '^E' end-of-line
 
 zsh_update_stuff() {
     (cd $ZSH && git pull)
-    (cd $ZSH/custom/themes/powerlevel9k && git pull)
+    (cd $ZSH/custom/themes/powerlevel10k && git pull)
     (cd $HOME/.zsh-syntax-highlighting && git pull)
     (cd $HOME/.zsh-autosuggestions && git pull)
 }
 
 [ -f "$HOME/.aliases" ] && . "$HOME/.aliases"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
