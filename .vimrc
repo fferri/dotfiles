@@ -40,6 +40,8 @@ Plug 'vim-syntastic/syntastic' " check syntax on each file save
 Plug 'nvie/vim-flake8' " also add PEP8 checking
 Plug 'vim-scripts/indentpython.vim'
 
+Plug 'peterhoeg/vim-qml'
+
 " run :PluginInstall in vim, or vim +PluginInstall +qall from shell
 " All of your Plugins must be added before the following line
 call plug#end()
