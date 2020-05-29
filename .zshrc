@@ -9,7 +9,11 @@ export PATH=$HOME/.bin:/usr/local/sbin:/usr/local/bin:$PATH
 export ZSH=$HOME/.oh-my-zsh
 
 clear2() { echo -e '\033[2J\033['$LINES';0H' }
-clear2
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+    :
+else
+    clear2
+fi
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
