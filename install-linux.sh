@@ -71,3 +71,12 @@ ln -s .dotfiles/.gvimrc
 
 vim +PlugInstall +qall
 
+mkdir -p .fonts
+cd .fonts
+for i in 'Regular' 'Bold' 'Italic' 'Bold Italic'; do
+    if [ ! -f "MesloLGS NF $i.ttf" ]; then
+        wget "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS NF ${i}.ttf"
+    fi
+done
+fc-cache -f -v
+cd -
