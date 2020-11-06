@@ -7,23 +7,29 @@ if [ ! -d .dotfiles ]; then
     exit 1
 fi
 
-sudo apt install zsh git vim vim-gtk3 terminator wget curl
+echo "Installing essential apt packages..."
+sudo apt install zsh git vim vim-gtk terminator wget curl gnome-tweak-tool
 
+echo "Configuring git user info..."
 git config --global user.email "federico.ferri.it@gmail.com"
 git config --global user.name "Federico Ferri"
 
+echo "Installing oh-my-zsh..."
 if [ ! -d .oh-my-zsh ]; then
     RUNZSH=no sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
+echo "Installing theme powerlevel10k for oh-my-zsh..."
 if [ ! -d .oh-my-zsh/custom/themes/powerlevel10k ]; then
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git .oh-my-zsh/custom/themes/powerlevel10k
 fi
 
+echo "Installing zsh autosuggestions..."
 if [ ! -d .zsh-autosuggestions ]; then
     git clone https://github.com/zsh-users/zsh-autosuggestions .zsh-autosuggestions
 fi
 
+echo "Installing zsh syntax highlighting..."
 if [ ! -d .zsh-syntax-highlighting ]; then
     git clone https://github.com/zsh-users/zsh-syntax-highlighting .zsh-syntax-highlighting
 fi
@@ -38,6 +44,7 @@ backup_file() {
     fi
 }
 
+echo "Creating symlinks to dotfiles..."
 backup_file .profile
 ln -s .dotfiles/.profile
 
@@ -56,9 +63,11 @@ ln -s .dotfiles/.p10k.zsh
 backup_file .terminator
 ln -s .dotfiles/.terminator
 
+echo "Configuring vim..."
 mkdir -p .vimswap
 mkdir -p .vimbackup
 
+echo "Installing vim plugged..."
 if [ ! -f .vim/autoload/plug.vim ]; then
     curl -fLo .vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
@@ -69,8 +78,10 @@ ln -s .dotfiles/.vimrc
 backup_file .gvimrc
 ln -s .dotfiles/.gvimrc
 
+echo "Installing vim plugged plugins..."
 vim +PlugInstall +qall
 
+echo "Installing MenloLGS NF fonts..."
 mkdir -p .fonts
 cd .fonts
 for i in 'Regular' 'Bold' 'Italic' 'Bold Italic'; do
@@ -80,3 +91,6 @@ for i in 'Regular' 'Bold' 'Italic' 'Bold Italic'; do
 done
 fc-cache -f -v
 cd -
+
+echo "Setting /bin/zsh as the default shell for user $USER..."
+chsh -s /bin/zsh $USER
