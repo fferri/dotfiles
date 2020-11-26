@@ -30,6 +30,9 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
+# pasting long lines is slow: (https://github.com/zsh-users/zsh-syntax-highlighting/issues/513)
+export ZSH_HIGHLIGHT_MAXLENGTH=60
+
 [ -f $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && . $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [ -f $HOME/.zsh-autosuggestions/zsh-autosuggestions.zsh ] && . $HOME/.zsh-autosuggestions/zsh-autosuggestions.zsh
 [ -f $HOME/.p10k.zsh ] || ln -s $HOME/.dotfiles/.p10k.zsh $HOME/.p10k.zsh
