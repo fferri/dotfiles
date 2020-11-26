@@ -8,7 +8,9 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
-command -v mdcd || mdcd() { mkdir "$1" && cd "$1" }
+if ! command -v mdcd > /dev/null; then
+    mdcd() { mkdir "$1" && cd "$1" }
+fi
 
 command -v colorls > /dev/null && alias ls=colorls
 
