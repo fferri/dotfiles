@@ -1,7 +1,7 @@
 if has('macunix')
     set guifont=HackNerdFontComplete-Regular:h14
 else
-    set guifont=Monospace\ 11
+    set guifont=MesloLGS\ NF\ 10
 endif
 
 " show toolbar
