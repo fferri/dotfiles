@@ -13,6 +13,8 @@ sudo apt install zsh git vim vim-gtk terminator wget curl gnome-tweak-tool
 echo "Configuring git user info..."
 git config --global user.email "federico.ferri.it@gmail.com"
 git config --global user.name "Federico Ferri"
+# remember git credentials for 1 hour (without storing them on disk)
+git config credential.helper 'cache --timeout=3600'
 
 echo "Installing oh-my-zsh..."
 if [ ! -d .oh-my-zsh ]; then
