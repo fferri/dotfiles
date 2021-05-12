@@ -22,3 +22,4 @@ if [ -f "$HOME/.profile.local" ]; then
     source "$HOME/.profile.local"
 fi
 export MAKEFLAGS="-j8"
+export PYTHONSTARTUP=$HOME/.dotfiles/python_startup.py
