@@ -29,18 +29,6 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-if CMAKE=$(which cmake 2>/dev/null); then
-    function cmake() {
-        if [ $# -eq 0 ]; then
-            "$CMAKE"
-        elif [ "$1" != "--build" -a "$1" != "--install" -a "$1" != "--open" ]; then
-            "$CMAKE" -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=ON "$@"
-        else
-            "$CMAKE" "$@"
-        fi
-    }
-fi
-
 alias week='date +%V'
 
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
