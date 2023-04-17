@@ -6,12 +6,12 @@ export LSCOLORS=ExGxBxDxCxEgEdxbxgxExE
 if [ -x "/usr/libexec/java_home" ]; then
     export JAVA_HOME="$(/usr/libexec/java_home)"
 fi
-if [ -d "/usr/local/opt/qt" ]; then
-    export QT5_DIR="/usr/local/opt/qt"
+if [ -d "${HOMEBREW_PREFIX:-/usr/local}/opt/qt@5" ]; then
+    export QT5_DIR="${HOMEBREW_PREFIX:-/usr/local}/opt/qt@5"
+fi
+if [ -n "$QT5_DIR" ]; then
     export CMAKE_PREFIX_PATH="${QT5_DIR}/lib/cmake"
 fi
-export OPENNI2_INCLUDE=/usr/local/include/ni2
-export OPENNI2_REDIST=/usr/local/lib/ni2
 if [ -d "$HOME/Dev/Python/site-packages" ]; then
     export PYTHONPATH="$PYTHONPATH:$HOME/Dev/Python/site-packages"
 fi
