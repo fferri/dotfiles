@@ -86,3 +86,17 @@ zsh_update_stuff() {
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+
+    # we are running over SSH...
+
+    if [ "$VENDOR" = "ubuntu" ]; then
+        #if [ -n "$ITERM_SESSION_ID" ]; then
+            # change terminal bg color:
+            # (can do more advanced stuff to better identify the remote machine)
+
+            echo -e '\e]1337;SetColors=bg=525\a'
+        #fi
+    fi
+fi
