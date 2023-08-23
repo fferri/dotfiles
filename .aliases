@@ -105,6 +105,15 @@ alias mp3-youtube='youtube-mp3'
 
 alias cam='open -a VLC rtsp://192.168.188.64/stream1'
 
+if [ $(uname -s) = Darwin ]; then
+    function pd() {
+        local pdapp=$(find /Applications -name 'Pd-0.*' -maxdepth 1 -type d | sort | tail -n1)
+        if [ -n "$pdapp" ]; then
+            $pdapp/Contents/MacOS/Pd "$@"
+        fi
+    }
+fi
+
 alias ,gd='git diff'
 alias ,gds='git diff --staged'
 alias ,gs='git status'
