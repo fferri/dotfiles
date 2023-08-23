@@ -35,7 +35,7 @@ Plug 'farmergreg/vim-lastplace'
 Plug 'chrisbra/NrrwRgn'
 Plug 'scrooloose/nerdcommenter'
 
-Plug 'w0rp/ale'
+"Plug 'w0rp/ale'
 Plug 'vim-syntastic/syntastic' " check syntax on each file save
 Plug 'nvie/vim-flake8' " also add PEP8 checking
 Plug 'vim-scripts/indentpython.vim'
