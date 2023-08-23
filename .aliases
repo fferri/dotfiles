@@ -100,6 +100,10 @@ fi
 # lldb bug https://stackoverflow.com/questions/47658596/strange-mixing-of-system-homebrew-python-with-lldb
 alias lldb='PATH=/usr/bin lldb'
 
+function cmake-build-and-install() {
+    cmake --build "$@" && cmake --install "$@"
+}
+
 alias youtube-mp3='youtube-dl --extract-audio --audio-format mp3'
 alias mp3-youtube='youtube-mp3'
 
