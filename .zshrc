@@ -69,8 +69,14 @@ zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
 bindkey "^[OA" history-beginning-search-backward-end
 bindkey "^[OB" history-beginning-search-forward-end
-bindkey '^[b' backward-word
-bindkey '^[f' forward-word
+if [ `uname` = Linux -a $TERM = xterm ]; then
+    bindkey '^[[1;3C' forward-word
+    bindkey '^[[1;3D' backward-word
+else
+    bindkey '^[b' backward-word
+    bindkey '^[f' forward-word
+fi
+
 bindkey '^[^?' backward-delete-word
 bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
