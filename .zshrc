@@ -75,6 +75,9 @@ bindkey '^[^?' backward-delete-word
 bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
 
+# issue with up-arrow (see https://github.com/zsh-users/zsh-autosuggestions/issues/619)
+ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(history-beginning-search-backward-end history-beginning-search-forward-end)
+
 zsh_update_stuff() {
     (cd $ZSH && git pull)
     (cd $ZSH/custom/themes/powerlevel10k && git pull)
