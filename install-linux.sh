@@ -8,13 +8,17 @@ if [ ! -d .dotfiles ]; then
 fi
 
 echo "Installing essential apt packages..."
-sudo apt install zsh git vim vim-gtk terminator wget curl gnome-tweak-tool
+sudo apt install zsh git vim vim-gtk terminator wget curl gimp inkscape cmake cmake-curses-gui build-essential libboost-dev qtbase5-dev libtinyxml2-dev
+
+sudo sh -c "wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O /tmp/google-chrome.deb && dpkg -i /tmp/google-chrome.deb && rm /tmp/google-chrome.deb"
+
+snap install zoom-client vlc discord telegram-desktop skype
 
 echo "Configuring git user info..."
 git config --global user.email "federico.ferri.it@gmail.com"
 git config --global user.name "Federico Ferri"
 # remember git credentials for 1 hour (without storing them on disk)
-git config credential.helper 'cache --timeout=3600'
+git config --global credential.helper 'cache --timeout=3600'
 
 echo "Installing oh-my-zsh..."
 if [ ! -d .oh-my-zsh ]; then
