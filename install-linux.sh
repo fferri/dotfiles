@@ -8,11 +8,11 @@ if [ ! -d .dotfiles ]; then
 fi
 
 echo "Installing essential apt packages..."
-sudo apt install zsh git vim vim-gtk terminator wget curl gimp inkscape cmake cmake-curses-gui build-essential libboost-dev qtbase5-dev libtinyxml2-dev
+sudo apt install zsh git vim vim-gtk terminator wget curl gimp inkscape cmake cmake-curses-gui build-essential libboost-dev qtbase5-dev libtinyxml2-dev gnome-tweaks python3-zmq python3-cbor bpython python3-lark python3-xmlschema python3-numpy python3-opencv python3-pykdl python3-pandas python3-matplotlib python3-pyqt5 python3-pyside2.qtcore python3-pyside2.qtgui python3-pyside2.qtqml python3-pyside2.qtquick python3-pyside2.qtquickcontrols2 python3-pyside2.qtquickwidgets python3-pyside2.qtwidgets python3-pyside2.qtxml python3-pyside2.qtsvg
 
 sudo sh -c "wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O /tmp/google-chrome.deb && dpkg -i /tmp/google-chrome.deb && rm /tmp/google-chrome.deb"
 
-snap install zoom-client vlc discord telegram-desktop skype
+snap install zoom-client vlc discord telegram-desktop skype obs-studio
 
 echo "Configuring git user info..."
 git config --global user.email "federico.ferri.it@gmail.com"
