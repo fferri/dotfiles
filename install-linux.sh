@@ -17,8 +17,12 @@ snap install zoom-client vlc discord telegram-desktop skype obs-studio
 echo "Configuring git user info..."
 git config --global user.email "federico.ferri.it@gmail.com"
 git config --global user.name "Federico Ferri"
+
 # remember git credentials for 1 hour (without storing them on disk)
-git config --global credential.helper 'cache --timeout=3600'
+#git config --global credential.helper 'cache --timeout=3600'
+
+sudo sh -c "wget https://github.com/git-ecosystem/git-credential-manager/releases/download/v2.3.2/gcm-linux_amd64.2.3.2.deb -O /tmp/gcm.deb && dpkg -i /tmp/gcm.deb && rm /tmp/gcm.deb"
+git config --global credential.credentialStore secretservice
 
 echo "Installing oh-my-zsh..."
 if [ ! -d .oh-my-zsh ]; then
