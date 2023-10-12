@@ -8,7 +8,7 @@ if [ ! -d .dotfiles ]; then
 fi
 
 echo "Installing essential apt packages..."
-sudo apt install zsh git vim vim-gtk terminator wget curl gimp inkscape cmake cmake-curses-gui build-essential libboost-dev qtbase5-dev libtinyxml2-dev libzmq3-dev gnome-tweaks
+sudo apt install zsh git vim vim-gtk terminator wget curl gimp inkscape cmake cmake-curses-gui build-essential libboost-dev qtbase5-dev libtinyxml2-dev libzmq3-dev gnome-tweaks xsltproc
 echo "Installing python apt packages..."
 sudo apt install bpython python3-zmq python3-cbor python3-lark python3-numpy python3-opencv python3-pykdl python3-pandas python3-matplotlib python3-pyqt5
 sudo apt install python3-xmlschema
